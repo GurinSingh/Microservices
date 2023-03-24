@@ -47,7 +47,7 @@ namespace Catalog.Api.Repositories
             return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
         }
         public async Task<bool> DeleteProduct(string id)
-        {
+        { 
             FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(p => p.Id, id);
 
             DeleteResult deleteResult = await this._context.Products.DeleteOneAsync(filter);
